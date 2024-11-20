@@ -32,10 +32,7 @@ export default function HeroSection(): JSX.Element {
       url: "",
       label: <AiFillLinkedin size={24} />,
     },
-    {
-      url: "",
-      label: <AiFillDribbbleCircle size={24} />,
-    },
+
     {
       url: "",
       label: <AiFillGithub size={24} />,
@@ -63,9 +60,9 @@ export default function HeroSection(): JSX.Element {
       <div className="absolute inset-0 w-full h-full">
         <Particles
           className="absolute inset-0 -z-10"
-          quantity={300}
-          staticity={500}
-          ease={500}
+          quantity={500}
+          staticity={800}
+          ease={800}
           color="#4F46E5"
         />
         <Meteors number={100} />
@@ -78,19 +75,17 @@ export default function HeroSection(): JSX.Element {
             <h1 id="heading-typewriter"></h1>
             <h1 id="name-text">Rafi Alif Fadhilah</h1>
           </div>
-          <p>Web Developer & Web Designer</p>
+          <p>Junior Full Stack Web Developer</p>
         </div>
         <Link
-          href="https://drive.google.com/file/d/1cODpw-zhF3dpDGRBxN0HlxOI1ywUYUbK/view?usp=sharing"
+          href="https://drive.google.com/file/d/1wUCeROEFbNQnkINkLVbhb2kq8xasK7Vz/view?usp=drive_link"
           className="btn btn-primary"
           target="_blank"
         >
-          <p>See My CV</p>
+          <p>Lihat CV</p>
         </Link>
       </div>
-      <div
-        className={`${styles["social-media-links"]} px-8 flex justify-center sm:justify-start`}
-      >
+      {/* <div className={`${styles["social-media-links"]} px-16 `}>
         {socials.map((social, i) => (
           <div
             className={`${styles["social-media"]} hover:text-white transition-colors duration-300`}
@@ -105,9 +100,9 @@ export default function HeroSection(): JSX.Element {
             </Link>
           </div>
         ))}
-      </div>
+      </div> */}
 
-      <div className="relative mx-20 sm:px-0" data-aos="zoom-in">
+      <div className="relative mx-16 sm:px-0" data-aos="zoom-in">
         <Image
           src={Rimage}
           width={400}

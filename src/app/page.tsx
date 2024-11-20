@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <div>
       <Navbar />
-      <div className="container mx-auto py-5 px-8">
+      <div className="container mx-auto py-5 px-4">
         <HeroSection />
       </div>
     </div>
