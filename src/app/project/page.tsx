@@ -102,12 +102,12 @@ const Project: React.FC = () => {
   };
 
   return (
-    <div className="p-4 md:p-8 lg:p-12  min-h-screen">
-      <div className="flex justify-center space-x-4 mb-8">
+    <div className="p-4 md:p-8 lg:p-12 py-8 min-h-screen">
+      <div className="flex justify-center mt-16 space-x-4 mb-8">
         <CoolMode>
           <button
             onClick={() => handleCategoryChange("All")}
-            className={`text-white font-semibold ${
+            className={`text-blue-500 font-semibold ${
               selectedCategory === "All"
                 ? "text-blue-500"
                 : "hover:text-blue-500"
@@ -119,7 +119,7 @@ const Project: React.FC = () => {
         <CoolMode>
           <button
             onClick={() => handleCategoryChange("FullStack")}
-            className={`text-white font-semibold ${
+            className={`text-blue-500 font-semibold ${
               selectedCategory === "FullStack"
                 ? "text-blue-500"
                 : "hover:text-blue-500"
@@ -131,7 +131,7 @@ const Project: React.FC = () => {
         <CoolMode>
           <button
             onClick={() => handleCategoryChange("FrontEnd")}
-            className={`text-white font-semibold ${
+            className={`text-blue-500 font-semibold ${
               selectedCategory === "FrontEnd"
                 ? "text-blue-500"
                 : "hover:text-blue-500"
