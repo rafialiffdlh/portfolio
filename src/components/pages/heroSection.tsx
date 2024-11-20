@@ -5,17 +5,16 @@ import { AiFillInstagram } from "@react-icons/all-files/ai/AiFillInstagram";
 import { AiFillLinkedin } from "@react-icons/all-files/ai/AiFillLinkedin";
 import { AiFillGithub } from "@react-icons/all-files/ai/AiFillGithub";
 import { AiOutlineArrowDown } from "@react-icons/all-files/ai/AiOutlineArrowDown";
-import { ParticlesDemo } from "./particles";
+import Particles from "@/components/ui/particles";
+import Meteors from "@/components/ui/meteors";
 import Typewriter from "typewriter-effect/dist/core";
 import { useEffect } from "react";
 import { ScrollIntoView } from "@/lib/scroll";
 import Link from "next/link";
 import Image from "next/image";
 
-import HeroImage from "../../public/images/hero-image.png";
-import Square from "../../public/images/rectangle.png";
 import Rimage from "@/public/images/rbg.png";
-import AOS from "aos"; 
+import AOS from "aos";
 import "aos/dist/aos.css";
 
 interface Social {
@@ -26,19 +25,19 @@ interface Social {
 export default function HeroSection(): JSX.Element {
   const socials: Social[] = [
     {
-      url: "https://www.instagram.com/ervin.cs_09",
+      url: "",
       label: <AiFillInstagram size={24} />,
     },
     {
-      url: "https://www.linkedin.com/in/ervin-cahyadinata-sungkono",
+      url: "",
       label: <AiFillLinkedin size={24} />,
     },
     {
-      url: "https://dribbble.com/ErvinCS",
+      url: "",
       label: <AiFillDribbbleCircle size={24} />,
     },
     {
-      url: "https://github.com/ervin-sungkono",
+      url: "",
       label: <AiFillGithub size={24} />,
     },
   ];
@@ -54,11 +53,24 @@ export default function HeroSection(): JSX.Element {
     const typewriter = new Typewriter("#heading-typewriter", typewriterConfig);
     typewriter.typeString("Rafi Alif Fadhilah").pauseFor(5000).start();
 
-    AOS.init({ duration: 1000 }); 
+    AOS.init({ duration: 1000 });
   }, []);
 
   return (
-    <section className={`${styles.container} py-6 md:py-16`}>
+    <section
+      className={`${styles.container} py-6 md:py-16 relative overflow-hidden`}
+    >
+      <div className="absolute inset-0 w-full h-full">
+        <Particles
+          className="absolute inset-0 -z-10"
+          quantity={300}
+          staticity={500}
+          ease={500}
+          color="#4F46E5"
+        />
+        <Meteors number={100} />
+      </div>
+
       <div className={styles["hero-content"]}>
         <div className={styles["heading-text"]}>
           <p>Hello, my name is</p>
@@ -77,11 +89,11 @@ export default function HeroSection(): JSX.Element {
         </Link>
       </div>
       <div
-        className={`${styles["social-media-links"]} px-8 flex justify-center sm:justify-start  `}
+        className={`${styles["social-media-links"]} px-8 flex justify-center sm:justify-start`}
       >
         {socials.map((social, i) => (
           <div
-            className={`${styles["social-media"]} hover:text-white transition-colors duration-300 `}
+            className={`${styles["social-media"]} hover:text-white transition-colors duration-300`}
             key={i}
           >
             <Link
@@ -104,16 +116,6 @@ export default function HeroSection(): JSX.Element {
           alt="Main Image"
           className="relative animate-float"
         />
-      </div>
-      <div className={styles["arrow-btn"]}>
-        <button
-          className="cursor-pointer hover:text-white transition-colors duration-300"
-          onClick={() =>
-            ScrollIntoView({ id: "about-section", block: "center" })
-          }
-        >
-          <AiOutlineArrowDown size={24} />
-        </button>
       </div>
     </section>
   );

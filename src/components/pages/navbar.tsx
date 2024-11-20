@@ -63,8 +63,8 @@ export default function Navbar() {
   const navigations: NavigationItem[] = [
     { label: "Home", url: "/" },
     { label: "About", url: "/about" },
-    { label: "Design", url: "/design" },
     { label: "Project", url: "/project" },
+    { label: "Contact", url: "/contact" },
   ];
 
   const isActive = (url: string): string =>
@@ -144,9 +144,6 @@ export default function Navbar() {
               </div>
             </div>
           </div>
-          <Link href="/contact" className="btn btn-secondary w-full">
-            Contact
-          </Link>
         </div>
         <div
           className={`${
